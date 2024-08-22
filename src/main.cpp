@@ -91,6 +91,8 @@ void usercontrol(void)
     buttonL2::onPing();
     buttonR1::onPing();
     buttonR2::onPing();
+    joystickLeft::onPing();
+    joystickRight::onPing();
     wait(20, vex::msec); // Sleep the task for a short amount of time to
                          // prevent wasted resources.
   }

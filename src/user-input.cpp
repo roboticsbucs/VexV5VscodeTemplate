@@ -23,6 +23,11 @@ This is useful for when you want some operation to happen while the button is pr
 or have a button toggle an operation.
 All Variables that impact only one button must be stored within the button's namespace
 ! Even if the method is empty, DO NOT DELETE the method, this will cause the system to break
+
+A note: Because the entirety of this program is serial, or single-threaded, it is paramount to
+not let a single button process sit idle, ie using vex's wait method. If you want to have a 
+program that does something after a certain amount of time or for a certain amount of time,
+use a condition using the time in onPing() to avoid this.
 */
 /*
 Examples:

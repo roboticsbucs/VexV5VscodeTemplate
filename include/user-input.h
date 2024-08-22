@@ -94,3 +94,13 @@ namespace buttonR2
   void onPing();
   void initialize();
 }
+
+namespace joystickLeft
+{
+  void onPing();
+}
+
+namespace joystickRight
+{
+  void onPing();
+}
