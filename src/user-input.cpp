@@ -14,15 +14,18 @@ Each button has a respective namespace which has four methods:
 initialize():
 Is called at the start of usercontrol to allow proper control flow.
 This should be called exactly once.
+
 onPress():
-Is called once and only once on the event that the namespace's respective button is pressed
+Is called once each time that the namespace's respective button is pressed
 onRelease():
-Is called once and only once on the event that the namespace's respective button is pressed
+Is called once each time that the namespace's respective button is released.
+
 onPing()
 Is called once and only once every tick.
 A tick is every iteration of the main gameplay loop that is found in usercontrol()
 This is useful for when you want some operation to happen while the button is pressed,
 or have a button toggle an operation.
+
 All Variables that impact only one button must be stored within the button's namespace
 ! Even if the method is empty, DO NOT DELETE the method, this will cause the system to break.
 
@@ -45,7 +48,7 @@ meaning that if it only is used by one button, it should go in that button's nam
 
 namespace buttonA
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonA};
+  static vex::controller::button buttonObject{Controller.ButtonA};
   void onPress()
   {
   }
@@ -57,14 +60,14 @@ namespace buttonA
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonB
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonB};
+  static vex::controller::button buttonObject{Controller.ButtonB};
   void onPress()
   {
   }
@@ -76,14 +79,14 @@ namespace buttonB
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonX
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonX};
+  static vex::controller::button buttonObject{Controller.ButtonX};
   void onPress()
   {
   }
@@ -95,14 +98,14 @@ namespace buttonX
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonY
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonY};
+  static vex::controller::button buttonObject{Controller.ButtonY};
   void onPress()
   {
   }
@@ -114,14 +117,14 @@ namespace buttonY
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonUp
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonUp};
+  static vex::controller::button buttonObject{Controller.ButtonUp};
   void onPress()
   {
   }
@@ -133,14 +136,14 @@ namespace buttonUp
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonDown
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonDown};
+  static vex::controller::button buttonObject{Controller.ButtonDown};
   void onPress()
   {
   }
@@ -152,14 +155,14 @@ namespace buttonDown
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonLeft
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonLeft};
+  static vex::controller::button buttonObject{Controller.ButtonLeft};
   void onPress()
   {
   }
@@ -171,14 +174,14 @@ namespace buttonLeft
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonRight
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonRight};
+  static vex::controller::button buttonObject{Controller.ButtonRight};
   void onPress()
   {
   }
@@ -190,14 +193,14 @@ namespace buttonRight
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonL1
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonL1};
+  static vex::controller::button buttonObject{Controller.ButtonL1};
   void onPress()
   {
   }
@@ -209,14 +212,14 @@ namespace buttonL1
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonL2
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonL2};
+  static vex::controller::button buttonObject{Controller.ButtonL2};
   void onPress()
   {
   }
@@ -228,14 +231,14 @@ namespace buttonL2
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonR1
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonR1};
+  static vex::controller::button buttonObject{Controller.ButtonR1};
   void onPress()
   {
   }
@@ -247,14 +250,14 @@ namespace buttonR1
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
 namespace buttonR2
 {
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonR2};
+  static vex::controller::button buttonObject{Controller.ButtonR2};
   void onPress()
   {
   }
@@ -266,8 +269,8 @@ namespace buttonR2
   }
   void initialize()
   {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
+    buttonObject.pressed(onPress);
+    buttonObject.released(onRelease);
   }
 }
 
