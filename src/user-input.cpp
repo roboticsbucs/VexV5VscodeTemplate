@@ -1,5 +1,7 @@
+#include <chrono>
 #include "vex.h"
 #include "main.h"
+using namespace std::chrono;
 /*
 ------------------------------------------------------------------
 BUTTON DEFINITIONS ! READ ME !
@@ -25,55 +27,22 @@ All Variables that impact only one button must be stored within the button's nam
 ! Even if the method is empty, DO NOT DELETE the method, this will cause the system to break
 
 A note: Because the entirety of this program is serial, or single-threaded, it is paramount to
-not let a single button process sit idle, ie using vex's wait method. If you want to have a 
+not let a single button process sit idle, ie using vex's wait method. If you want to have a
 program that does something after a certain amount of time or for a certain amount of time,
 use a condition using the time in onPing() to avoid this.
 */
 /*
-Examples:
+---------------Enums---------------------------
+*/
 
-namespace buttonTemplate
-{
-  static vex::controller::button BUTTON_OBJECT{};
-  void onPress()
-  {
-  }
-  void onRelease()
-  {
-  }
-  void onPing()
-  {
-  }
-  void initialize()
-  {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
-  }
-}
-namespace toggleButton
-{
-  static vex::controller::button BUTTON_OBJECT{Controller.ButtonA};
-  bool buttonIsPressed = false;
-  static void onPress()
-  {
-    buttonIsPressed = true;
-    // you can add more code here, just make sure that the bool being set is preserved
-  }
-  static void onRelease()
-  {
-    buttonIsPressed = false;
-    // you can add more code here, just make sure that the bool being set is preserved
-  }
-  static void onPing()
-  {
-    // toggled action here
-  }
-  static void initialize()
-  {
-    BUTTON_OBJECT.pressed(onPress);
-    BUTTON_OBJECT.released(onRelease);
-  }
-}
+/*
+---------------Constants------------------------
+(constants and variables should go in their minimum scope,
+meaning that if it only is used by one button, it should go in that button's namespace)
+*/
+
+/*
+---------------Variables-----------------------
 */
 
 namespace buttonA
