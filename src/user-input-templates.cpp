@@ -67,8 +67,37 @@ namespace whilePressedButtonTemplate
     }
 
 }
+// alternates between doing action A and B, used for such things as pneumatic controls
+namespace ToggleActionButton
+{
+    static vex::controller::button buttonObject{/*REPLACE ME!!!*/};
+    static bool latch{false};
+    void onPress()
+    {
+        if (latch)
+        {
+            // do action A
+        }
+        else
+        {
+            // do action B
+        }
+        latch = !latch;
+    }
+    void onRelease()
+    {
+    }
+    void onPing()
+    {
+    }
+    void initialize()
+    {
+        buttonObject.pressed(onPress);
+        buttonObject.released(onRelease);
+    }
+}
 // acts once after a constant delay
-// please do not use vex::waitUntil, because we only have one thread to work with
+// please do not use vex::waitUntil, because the other buttonPings have to wait until each previous onPing() is done
 namespace actAfterDelayButtonTemplate
 {
     static vex::controller::button buttonObject{/*REPLACE ME!!!*/};
